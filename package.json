@@ -1,0 +1,28 @@
+{
+  "name": "discord-webhook-sender",
+  "version": "2.0.1",
+  "description": "Discord Webhook Sender Desktop App",
+  "author": {
+    "name": "Lily"
+  },
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --win"
+  },
+  "build": {
+    "appId": "com.discord.webhook",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "electronVersion": "34.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.9"
+  },
+  "devDependencies": {
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8"
+  }
+}

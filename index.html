@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discord Webhook Sender</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Webhook URL Input -->
+    <div class="card">
+      <label>웹훅 URL</label>
+      <input type="text" id="webhookUrl" placeholder="Discord Webhook URL">
+    </div>
+
+    <!-- Message Form -->
+    <div class="card">
+      <h3>기본 설정</h3>
+      <input type="text" id="username" placeholder="사용자명">
+      <input type="text" id="avatarUrl" placeholder="프로필 이미지 URL">
+      <textarea id="content" placeholder="메시지 내용"></textarea>
+      
+      <!-- Embed Section -->
+      <div class="embed-section">
+        <h3>임베드</h3>
+        <input type="text" id="embedTitle" placeholder="임베드 제목">
+        <input type="text" id="embedUrl" placeholder="임베드 URL">
+        <textarea id="embedDescription" placeholder="임베드 설명"></textarea>
+
+        <div class="color-picker">
+          <label>임베드 색상</label>
+          <input type="color" id="embedColor" value="#5865F2">
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-section">
+          <h3>이미지</h3>
+          <input type="text" id="imageUrl" placeholder="메인 이미지 URL">
+          <input type="text" id="thumbnailUrl" placeholder="썸네일 이미지 URL">
+        </div>
+
+        <!-- Author Section -->
+        <div class="author-section">
+          <h3>저자</h3>
+          <input type="text" id="authorName" placeholder="저자 이름">
+          <input type="text" id="authorUrl" placeholder="저자 URL">
+          <input type="text" id="authorIconUrl" placeholder="저자 아이콘 URL">
+        </div>
+
+        <!-- Fields Section -->
+        <div class="fields-section">
+          <div class="fields-header">
+            <span>필드</span>
+            <button id="addField" class="btn-blue">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="16"/>
+                <line x1="8" y1="12" x2="16" y2="12"/>
+              </svg>
+              필드 추가
+            </button>
+          </div>
+          <div id="fieldsContainer"></div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer-section">
+          <h3>푸터</h3>
+          <input type="text" id="footerText" placeholder="푸터 텍스트">
+          <input type="text" id="footerIconUrl" placeholder="푸터 아이콘 URL">
+          <label>타임스탬프</label>
+          <input type="datetime-local" id="timestamp">
+        </div>
+      </div>
+    </div>
+
+    <!-- Preview -->
+    <div class="card">
+      <h3>미리보기</h3>
+      <div class="preview" id="preview">
+        <div class="preview-content"></div>
+      </div>
+    </div>
+
+    <!-- Status Message -->
+    <div id="status" class="status"></div>
+
+    <!-- Send Button -->
+    <button id="sendWebhook" class="btn-green">웹훅 전송</button>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
